@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Myfxbook Widget</title>
-    <meta http-equiv="refresh" content="300"> <!-- Refresh every 5 minutes -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        .timestamp {
-            margin-top: 15px;
-            color: #333;
-            font-size: 16px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 90vh;
-            border: none;
-        }
-
-        .credit {
-            font-size: 10px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="300"> <!-- Refresh every 5 minutes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myfxbook Dashboard</title>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    .widget-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .widget {
+      background: #fff;
+      margin-bottom: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      height: 400px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .footer-link {
+      font-size: 13px;
+      color: #666666;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-link a {
+      color: #666666;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="timestamp">
-        Page loaded at: <span id="timestamp"></span>
+  <div class="widget-container">
+
+    <!-- Volatility Widget -->
+    <div class="widget">
+      <iframe src="https://widgets.myfxbook.com/widgets/market-volatility.html?symbols=8,9,11,12,6,13,14,17,7,1,4,2,28,5,29,3,50,51&type=0"></iframe>
+      <div class="footer-link">
+        <a href="https://www.myfxbook.com" title="Myfxbook" target="_self" rel="noopener">Powered by Myfxbook.com</a>
+      </div>
     </div>
 
-    <iframe 
-         src="https://widgets.myfxbook.com/widgets/market-volatility.html?symbols=11,17,7,1,2,3&type=0" width="100%" height="100%" frameborder="0">
-    </iframe>
-
-    <div class="credit">
-        <a href="https://www.myfxbook.com" title="Myfxbook" class="myfxbookLink" target="_self" rel="noopener">
-            Powered by Myfxbook.com
-        </a>
+    <!-- Spreads Widget -->
+    <div class="widget">
+      <iframe src="https://widget.myfxbook.com/widget/broker-spreads.html?symbols=AUDUSD,EURGBP,EURUSD,GBPUSD,USDCAD,USDCHF,USDCNY,USDHKD,USDJPY&mt4Servers=1011,1589,2545,2824,4582,4931,5168&includeCommissions=false&promoteBroker=0"></iframe>
+      <div class="footer-link">
+        <a href="https://www.myfxbook.com/forex-broker-spreads" title="Live Forex Spreads" target="_blank" rel="noopener"><b>Live Forex Spreads</b></a> by Myfxbook.com
+      </div>
     </div>
 
-    <script>
-        // Display the current time
-        const now = new Date();
-        document.getElementById("timestamp").textContent = now.toLocaleString();
-    </script>
+    <!-- Market Hours Widget -->
+    <div class="widget">
+      <iframe src="https://widget.myfxbook.com/widget/market-hours.html"></iframe>
+      <div class="footer-link">
+        <a href="https://www.myfxbook.com/market-hours" title="Forex Market Hours" target="_blank" rel="noopener"><b>Market Hours</b></a> by Myfxbook.com
+      </div>
+    </div>
+
+    <!-- Economic Calendar Widget -->
+    <div class="widget">
+      <iframe src="https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=3&symbols=EUR,GBP,USD"></iframe>
+      <div class="footer-link">
+        <a href="https://www.myfxbook.com/forex-economic-calendar?utm_source=widget13&utm_medium=link&utm_campaign=copyright" title="Economic Calendar" target="_blank" rel="noopener"><b>Economic Calendar</b></a> by Myfxbook.com
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
